@@ -13,13 +13,13 @@ Currently supports DecryptPassword, EncryptPassword and Discover. It uses Pywin3
   
 **Usage**
 
-  slinger_utility.py --decrypt '028500CA99D23BDC00EA62B380DB1643'
+  python slinger_utility.py --decrypt '028500CA99D23BDC00EA62B380DB1643'
 
-  slinger_utility.py --encrypt 'admin'
+  python slinger_utility.py --encrypt 'admin'
 
 **Sample**
 
-  slinger_utility.py --decrypt '028500CA99D23BDC00EA62B380DB1643'
+  python slinger_utility.py --decrypt '028500CA99D23BDC00EA62B380DB1643'
 
   Encrypted Password: [E1:028500CA99D23BDC00EA62B380DB1643]
 
