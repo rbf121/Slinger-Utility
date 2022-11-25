@@ -83,7 +83,11 @@ try:
                     print(';password='+adminPassword)
                     if adminPassword.startswith('E1:') and decrypt==True:
                         try:
-                            print('password=' + decryptPassword(adminPassword))
+                            
+                            decryptedPassword = decryptPassword(adminPassword)
+                            print('password=' + decryptedPassword)
+                            each['adminPassword'] = decryptedPassword
+                            each['userPassword'] = decryptPassword(each['userPassword'])
                         except:
                             print(';could not decrypt, check python version')
 
@@ -94,12 +98,12 @@ try:
                 #    print(each.get('memberslingbox'))
                 if outputFile:
                     fp = open(outputFile,'w')
-                    fp.write(str(accountBoxes))
+                    fp.write(json.dumps(accountBoxes, indent=4))
                     fp.close()
                     print('JSON output file saved to', outputFile)
                 else:
                     print('JSON Found in DB:')
-                    print(accountBoxes)                
+                    print(json.dumps(accountBoxes, indent=4))                
             else:
                 print('No match')
                 
